@@ -17,3 +17,8 @@ To clear all state call $Undoer.clear`
 ## Events
 
 The Undoer also emits undone and redone events with the state that has been applied.
+
+
+# Restrictions 
+
+This is currently intended to handle properties on the parent object, method calls or properties on child nodes won't work at this time, but may be added later.
