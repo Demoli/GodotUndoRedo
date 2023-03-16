@@ -2,6 +2,10 @@
 
 https://medium.com/design-patterns-in-python/memento-pattern-eba610b3b59c
 
+# Important note
+
+Redo is currently broken, but undo should work fine, this will be resolved ASAP.
+
 ## Usage
 
 Add an Undoer node to your scene and set the target to the node you want to track (by default this is the current parent node).
