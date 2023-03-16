@@ -1,0 +1,33 @@
+[gd_scene load_steps=3 format=3 uid="uid://co8mhkkua0jt4"]
+
+[ext_resource type="Script" path="res://addons/undoredo/TestScene.gd" id="1_k1hok"]
+[ext_resource type="Script" path="res://addons/undoredo/Undoer.gd" id="2_nou7a"]
+
+[node name="TestScene" type="Node2D"]
+script = ExtResource("1_k1hok")
+
+[node name="Undoer" type="Node" parent="." node_paths=PackedStringArray("target")]
+script = ExtResource("2_nou7a")
+target = NodePath("..")
+
+[node name="UndoButton" type="Button" parent="."]
+offset_top = 36.0
+offset_right = 50.0
+offset_bottom = 67.0
+text = "Undo"
+
+[node name="RedoButton" type="Button" parent="."]
+offset_top = 72.0
+offset_right = 50.0
+offset_bottom = 103.0
+text = "Redo
+"
+
+[node name="RandButton" type="Button" parent="."]
+offset_right = 8.0
+offset_bottom = 8.0
+text = "Randomise"
+
+[connection signal="pressed" from="UndoButton" to="." method="_on_undo_button_pressed"]
+[connection signal="pressed" from="RedoButton" to="." method="_on_redo_button_pressed"]
+[connection signal="pressed" from="RandButton" to="." method="_on_rand_button_pressed"]
