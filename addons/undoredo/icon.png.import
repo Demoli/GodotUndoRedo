@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dub22yhk50og4"
-path="res://.godot/imported/icon.svg-375372b3d230e7d79ede6e095e089b79.ctex"
+uid="uid://cb80qa68l3rq1"
+path="res://.godot/imported/icon.png-04587cec7f5eb857f7455a5f39777b0f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/undoredo/icon.svg"
-dest_files=["res://.godot/imported/icon.svg-375372b3d230e7d79ede6e095e089b79.ctex"]
+source_file="res://addons/undoredo/icon.png"
+dest_files=["res://.godot/imported/icon.png-04587cec7f5eb857f7455a5f39777b0f.ctex"]
 
 [params]
 
@@ -32,6 +32,3 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
-svg/scale=1.0
-editor/scale_with_editor_scale=false
-editor/convert_colors_with_editor_theme=false
