@@ -1,7 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://co8mhkkua0jt4"]
+[gd_scene load_steps=5 format=3 uid="uid://co8mhkkua0jt4"]
 
 [ext_resource type="Script" path="res://addons/undoredo/TestScene.gd" id="1_k1hok"]
 [ext_resource type="Script" path="res://addons/undoredo/Undoer.gd" id="2_nou7a"]
+
+[sub_resource type="SystemFont" id="SystemFont_sollx"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_khxlf"]
+font = SubResource("SystemFont_sollx")
+font_size = 40
 
 [node name="TestScene" type="Node2D"]
 script = ExtResource("1_k1hok")
@@ -23,11 +29,26 @@ offset_bottom = 103.0
 text = "Redo
 "
 
-[node name="RandButton" type="Button" parent="."]
+[node name="IncrementButton" type="Button" parent="."]
 offset_right = 8.0
 offset_bottom = 8.0
-text = "Randomise"
+text = "Increment"
+
+[node name="DecrementButton" type="Button" parent="."]
+offset_left = 98.0
+offset_right = 192.0
+offset_bottom = 31.0
+text = "Decrement"
+
+[node name="Label" type="Label" parent="."]
+offset_left = 104.0
+offset_top = 52.0
+offset_right = 144.0
+offset_bottom = 75.0
+text = "0"
+label_settings = SubResource("LabelSettings_khxlf")
 
 [connection signal="pressed" from="UndoButton" to="." method="_on_undo_button_pressed"]
 [connection signal="pressed" from="RedoButton" to="." method="_on_redo_button_pressed"]
-[connection signal="pressed" from="RandButton" to="." method="_on_rand_button_pressed"]
+[connection signal="pressed" from="IncrementButton" to="." method="_on_increment_button_pressed"]
+[connection signal="pressed" from="DecrementButton" to="." method="_on_decrement_button_pressed"]

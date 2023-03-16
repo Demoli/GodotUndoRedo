@@ -9,6 +9,7 @@ signal redone
 var originator
 var caretaker
 var undo_index = -1
+var redo_index = -1
 
 func _enter_tree():
 	originator = MementoOriginator.new()
@@ -25,6 +26,7 @@ func undo():
 	if undo_index > -1 and undo_index <= caretaker.size():
 		caretaker.restore(undo_index)
 		undo_index -= 1
+		redo_index += 1
 		var state = originator.get_memento().get_state()
 		apply_to_parent(state)
 		emit_signal("undone", state)
@@ -32,15 +34,15 @@ func undo():
 	return false
 	
 func redo():
-	return 
-#	if undo_index <= caretaker.size():
-#		caretaker.restore(undo_index)
-#		undo_index += 1
-#		var state = originator.get_memento().get_state()
-#		apply_to_parent(state)
-#		emit_signal("redone", state)
-#
-#	return false
+	if redo_index > -1 and redo_index <= caretaker.size():
+		caretaker.restore(redo_index)
+		undo_index += 1
+		redo_index -= 1
+		var state = originator.get_memento().get_state()
+		apply_to_parent(state)
+		emit_signal("redone", state)
+
+	return false
 
 func clear():
 	caretaker.clear()
