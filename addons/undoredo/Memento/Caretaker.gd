@@ -31,6 +31,12 @@ func can_undo():
 func can_redo() -> int:
 	return not _redos.is_empty()
 
+func clear_undo():
+	_undos = []
+
+func clear_redo():
+	_redos = []
+
 func clear():
 	_undos = []
 	_redos = []

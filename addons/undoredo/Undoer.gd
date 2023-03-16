@@ -44,6 +44,12 @@ func can_undo():
 func can_redo():
 	return caretaker.can_redo()
 
+func clear_undo():
+	caretaker.clear_undo()
+
+func clear_redo():
+	caretaker.clear_redo()
+
 func clear():
 	caretaker = MementoCaretaker.new(originator)
 
