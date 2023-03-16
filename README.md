@@ -1,4 +1,4 @@
-# Undo / Redo nodes based on Memento pattern
+# Undo / Redo node based on Memento pattern
 
 https://medium.com/design-patterns-in-python/memento-pattern-eba610b3b59c
 
