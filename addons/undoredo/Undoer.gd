@@ -1,5 +1,4 @@
 @tool
-class_name Undoer
 extends Node
 
 signal undone
