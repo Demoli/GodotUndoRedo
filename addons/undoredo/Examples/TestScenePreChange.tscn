@@ -1,6 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://co8mhkkua0jt4"]
+[gd_scene load_steps=5 format=3]
 
-[ext_resource type="Script" path="res://addons/undoredo/TestScene.gd" id="1_k1hok"]
+[ext_resource type="Script" path="res://addons/undoredo/Examples/TestScenePreChange.gd" id="1_4rt2r"]
 [ext_resource type="Script" path="res://addons/undoredo/Undoer.gd" id="2_nou7a"]
 
 [sub_resource type="SystemFont" id="SystemFont_sollx"]
@@ -9,8 +9,8 @@
 font = SubResource("SystemFont_sollx")
 font_size = 40
 
-[node name="TestScene" type="Node2D"]
-script = ExtResource("1_k1hok")
+[node name="TestScenePreChange" type="Node2D"]
+script = ExtResource("1_4rt2r")
 
 [node name="Undoer" type="Node" parent="." node_paths=PackedStringArray("target")]
 script = ExtResource("2_nou7a")

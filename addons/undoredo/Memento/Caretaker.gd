@@ -3,26 +3,34 @@ class_name MementoCaretaker
 extends Node
 
 var _originator
-var _mementos
+var _undos := []
+var _redos := []
 
 # Guardian. Provides a narrow interface to the mementos
 func _init(originator):
 	_originator = originator
-	_mementos = []
 
 func create():
 	# "Store a new Memento of the Originators current state"
 	var memento = _originator.get_memento()
-	_mementos.append(memento)
+	_undos.append(memento)
 
-func restore(index):
-#	Replace the Originators current state with the state
-#	stored in the saved Memento
-	var memento = _mementos[index]
+func undo():
+	var memento = _undos.pop_back()
+	_redos.push_back(memento)
+	_originator.set_memento(memento)
+	
+func redo():
+	var memento = _redos.pop_back()
+	_undos.push_back(memento)
 	_originator.set_memento(memento)
 
-func size() -> int:
-	return _mementos.size()
+func can_undo():
+	return not _undos.is_empty()
+
+func can_redo() -> int:
+	return not _redos.is_empty()
 
 func clear():
-	_mementos = []
+	_undos = []
+	_redos = []

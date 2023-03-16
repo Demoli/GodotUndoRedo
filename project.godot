@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="undo_redo"
-run/main_scene="res://addons/undoredo/TestScene.tscn"
+run/main_scene="res://addons/undoredo/Examples/TestScenePreChange.tscn"
 config/features=PackedStringArray("4.0", "Forward Plus")
 
 [editor_plugins]

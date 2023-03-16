@@ -2,10 +2,6 @@
 
 https://medium.com/design-patterns-in-python/memento-pattern-eba610b3b59c
 
-# Important note
-
-Redo is currently broken, but undo should work fine, this will be resolved ASAP.
-
 ## Usage
 
 Add an Undoer node to your scene and set the target to the node you want to track (by default this is the current parent node).
@@ -22,6 +18,11 @@ To clear all state call `$Undoer.clear`
 
 The Undoer also emits `undone` and `redone` events with the state that has been applied.
 
+# Examples
+
+There are 2 example scenes in res://addons/undoredo/Examples, these demonstrate some different approaches you can use.
+
 # Restrictions 
 
 This is currently intended to handle properties on the parent object, method calls or properties on child nodes won't work at this time, but may be added later.
+
